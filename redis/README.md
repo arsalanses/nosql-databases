@@ -22,12 +22,12 @@ cat redis.txt | redis-cli
 docker exec -i redis-stack-server redis-cli < redis.txt
 ```sh
 
-# Namespace
+## Namespace
 ```sh
 keys user:*:username
 ```
 
-# Array
+## Array
 ```sh
 LPUSH users:usernames Matin
 RPUSH users:usernames Moeini
@@ -35,4 +35,10 @@ RPUSH users:usernames Moeini
 
 ```sh
 LRANGE users:usernames 0 1
+```
+
+## Hash
+```sh
+HSET key field value
+HGETALL myhash
 ```
