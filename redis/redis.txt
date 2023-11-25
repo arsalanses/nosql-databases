@@ -1,0 +1,2 @@
+SET user:1:name matin
+SET user:1:last_name moeini
