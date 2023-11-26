@@ -1,0 +1,8 @@
+CREATE (d1:Developer {name:"Matin"});
+MERGE (d2:Developer {name:"Ali"});
+MERGE (d3:Developer {name:"Moein"});
+
+CREATE (d1)-[:LEADS]->(d2);
+CREATE (d2)-[:LEADS]->(d3);
+
+MATCH v=(d:Developer)-[]->() RETURN v;
