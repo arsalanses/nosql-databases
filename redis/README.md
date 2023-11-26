@@ -42,3 +42,12 @@ LRANGE users:usernames 0 1
 HSET key field value
 HGETALL myhash
 ```
+
+## SET
+```sh
+SADD user:123:favorites 347
+SISMEMBER user:123:favorites 347
+
+SADD user:123:favorites 347 121 542 100 213
+SMEMBERS user:123:favorites
+```
