@@ -1,5 +1,0 @@
-HSET quera:college:users:profiles:matin username matin
-HSET quera:college:users:profiles:matin password 12341234
-HSET quera:college:users:profiles:matin email moeini.imp@gmail.com
-HSET quera:college:users:profiles:matin company quera
-HSET quera:college:users:profiles:matin technologies ["python","django"]
