@@ -25,3 +25,30 @@ CREATE (d1)-[:LEADS]->(d2)
 CREATE (d2)-[:LEADS]->(d3);
 MATCH v=(d:Developer)-[]->() RETURN v;
 ```
+
+```sh
+MERGE (p:Person {name:"Matin"})
+
+ON MATCH SET p.searched_at=datetime()
+
+ON CREATE SET p.created_at=datetime()
+
+SET p.updated_at=timestamp()
+```
+
+```sh
+MATCH (c:Company {name: 'Quera Matching'})
+DETACH DELETE c
+```
+
+```sh
+MATCH (p:Person {name: 'Matin'})
+REMOVE p:Manager
+RETURN p
+```
+
+```sh
+MATCH (p:Person {name: 'Matin'})
+REMOVE p.military_status
+RETURN p
+```
