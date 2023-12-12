@@ -87,3 +87,12 @@ db.users.deleteOne({name:"Matin"})
 db.users.deleteMany({technologies:"php"})
 ```
 
+```
+docker exec -i mongodb bash -c "mongodump --host=127.0.0.1 --port=27017 --username=user --password=secret --db=statistics --authenticationDatabase=admin --out=/root/MongoBackup"
+
+docker cp mongodb:/root/MongoBackup/ ./MongoBackup
+
+docker cp ./MongoBackup mongodb:/root/MongoBackup/
+
+docker exec -i mongodb bash -c "mongorestore --host=127.0.0.1 --port=27017 --username=user --password=newsecret --nsInclude=statistics.* --authenticationDatabase=admin /root/MongoBackup"
+```
